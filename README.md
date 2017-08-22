@@ -1,8 +1,9 @@
 # EP-s
-EPs do 1o semestre de 2017
+EPs mais úteis ao longo do curso.
 
-Prof. Yoshiharu
+Prof. Yoshiharu - 110
+Prof. Yoshiharu - 121
 
-Monitores: Capella e Padilha
+Monitores: Capella e Padilha - 110
+           Gabriel e Rodrigo - 121
 
-1o semestre no curso.
