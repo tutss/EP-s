@@ -1,0 +1,211 @@
+Valores - no de slots: 4 | no de cores: 6 | tentativas: 12
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 7
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 5
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 6
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 6
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 7
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 5
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 7
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 7
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 6
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 6
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+Valores - no de slots: 4 | no de cores: 36 | tentativas: 72
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 35
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 41
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 36
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 42
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 40
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 40
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 41
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 42
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 40
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 40
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+Valores - no de slots: 4 | no de cores: 108 | tentativas: 216
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 108
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 110
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 115
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 111
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 109
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 109
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 116
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 112
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 114
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 110
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+
+Valores - no de slots: 16 | no de cores: 6 | tentativas: 12
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 8
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 10
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 10
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 9
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 8
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 8
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 9
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 8
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 9
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 9
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+Valores - no de slots: 16 | no de cores: 36 | tentativas: 72
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 42
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 42
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 41
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 43
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 45
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 45
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 43
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 40
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 41
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 44
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+Valores - no de slots: 16 | no de cores: 108 | tentativas: 216
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 117
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 117
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 118
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 118
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 114
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 120
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 119
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 120
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 116
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 121
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+
+Valores - no de slots: 64 | no de cores: 6 | tentativas: 12
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 10
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 11
+-> COMEÇA O JOGO: 
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 10
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 11
+-> COMEÇA O JOGO: 
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 11
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 11
+-> COMEÇA O JOGO: 
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 11
+Taxa de ganho a cada 10 tentativas: 0.0 número de ganhos: 7
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 3
+Valores - no de slots: 64 | no de cores: 36 | tentativas: 72
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 43
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 43
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 47
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 46
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 47
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 46
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 45
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 43
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 46
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 48
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+Valores - no de slots: 64 | no de cores: 108 | tentativas: 216
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 119
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 120
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 121
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 117
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 128
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 124
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 120
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 120
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 119
+-> COMEÇA O JOGO: 
+Ganhou na tentativa: 122
+Taxa de ganho a cada 10 tentativas: 1.0 número de ganhos: 10
+Taxa de perda a cada 10 tentativas: 0.0 número de perdas: 0
+
+
+Numero de ganhadas total: 87
+Numero de perdidas total: 3
+Taxa de ganho/perda total: 29.0
