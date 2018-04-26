@@ -17,23 +17,23 @@ public class PointST<Value>{
     }
 
     public boolean isEmpty() {
-
+        return tree.isEmpty();
     }
 
     public int size() {
-
+        return tree.size();
     }
     public void put(Point2D p, Value val) {
         if (p == null || val == null) throw new IllegalArgumentException();
-
+        tree.put(p,val);
     }
     public Value get(Point2D p) {
         if (p == null) throw new IllegalArgumentException();
-
+        tree.get(p);
     }
     public boolean contains(Point2D p) {
         if (p == null) throw new IllegalArgumentException();
-
+        return tree.contains(p);
     }
     public Iterable<Point2D> points() {
 
