@@ -36,11 +36,11 @@ public class PointST<Value>{
         return tree.contains(p);
     }
     public Iterable<Point2D> points() {
-
+        return tree.keys();
     }
     public Iterable<Point2D> range(RectHV rect){
         if (rect == null) throw new IllegalArgumentException();
-
+        
     }
     public Iterable<Point2D> nearest(Point2D p, int k){
         if (p == null) throw new IllegalArgumentException();
