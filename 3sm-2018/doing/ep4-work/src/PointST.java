@@ -29,7 +29,7 @@ public class PointST<Value>{
     }
     public Value get(Point2D p) {
         if (p == null) throw new IllegalArgumentException();
-        tree.get(p);
+        return tree.get(p);
     }
     public boolean contains(Point2D p) {
         if (p == null) throw new IllegalArgumentException();
@@ -40,11 +40,16 @@ public class PointST<Value>{
     }
     public Iterable<Point2D> range(RectHV rect){
         if (rect == null) throw new IllegalArgumentException();
-        
+        Queue<Point2D> q = new Queue<Point2D>();
+        for (Point2D p : tree.keys()) {
+            if (rect.contains(p))
+                q.enqueue(p);
+        }
+        return q;
     }
     public Iterable<Point2D> nearest(Point2D p, int k){
         if (p == null) throw new IllegalArgumentException();
-
+        return null;
     }
     // Private methods
 
