@@ -4,6 +4,7 @@
  */
 
 import edu.princeton.cs.algs4.*;
+import java.util.NoSuchElementException;
 
 public class KdTreeST<Value>{
 
@@ -94,15 +95,80 @@ public class KdTreeST<Value>{
         else return node.val;
     }
 
+
+    /*
+    * Return the keys in the tree
+    */
     public Iterable<Point2D> points() {
         if (isEmpty()) {
+            //System.out.println("Breakpoint 1");
             return new Queue<Point2D>();
         }
+        //System.out.println("Breakpoint 2");
         return keys(min(), max());
     }
-    private Iterable<Point2D> keys()
+    private Iterable<Point2D> keys(Point2D lo, Point2D hi) {
+        if (lo == null) throw new IllegalArgumentException();
+        if (hi == null) throw new IllegalArgumentException();
+        //System.out.println("Breakpoint 3");
+        
+        //System.out.println("Breakpoint do min: "+ hi);
+        //System.out.println("Breakpoint do max: "+ lo);
+
+        Queue<Point2D> queue = new Queue<Point2D>();
+        keys(root, queue, lo, hi);
+        return queue;
+    }
+    private void keys(Node node, Queue<Point2D> queue, Point2D lo, Point2D hi) {
+        if (node == null) return; 
+        //System.out.println("Breakpoint 4");
+
+        int cmplo = node.compare(lo);
+        //System.out.println("Breakpoint 5 - compare cmplo: " + cmplo);
+ 
+        int cmphi = node.compare(hi); 
+        //System.out.println("Breakpoint 6 - compare cmphi: " + cmphi);
+        if (cmplo < 0) keys(node.rt, queue, lo, hi); 
+        if (cmplo <= 0 && cmphi >= 0) {
+            //System.out.println("Breakpoint 7 - enqueue p: " + node.p);
+            queue.enqueue(node.p); 
+        }
+        if (cmphi > 0) keys(node.lf, queue, lo, hi);
+    }
+
+
+    /*
+    * Methods for min and max
+    */
+    private Point2D min() {
+        if (isEmpty()) throw new NoSuchElementException("calls min() with empty symbol table");
+        return min(root).p;
+    } 
+
+    private Node min(Node x) { 
+        if (x.lf == null) return x; 
+        else                return min(x.lf); 
+    } 
+
+    private Point2D max() {
+        if (isEmpty()) throw new NoSuchElementException("calls max() with empty symbol table");
+        return max(root).p;
+    } 
+
+    private Node max(Node x) {
+        if (x.rt == null) return x; 
+        else              return max(x.rt); 
+    } 
+
+    //  Todo
     public Iterable<Point2D> range(RectHV rect){
-        return null;
+        if (rect == null) throw new IllegalArgumentException();
+        Queue<Point2D> q = new Queue<Point2D>();
+        for (Point2D p : points()) {
+            if (rect.contains(p))
+                q.enqueue(p);
+        }
+        return q;
     }
 
     public Iterable<Point2D> nearest(Point2D p, int k){ 
@@ -161,5 +227,12 @@ public class KdTreeST<Value>{
             System.out.println("Point: " + points_array[i] + " got letter " + letter_at);   
         }
         System.out.println(" Finished getting! ");
+
+        System.out.println(" Iterating over the tree! ");
+        for (Point2D s : points.points()) {
+            System.out.println("O valor da chave: " + s);            
+        }
+        System.out.println(" Finished iterating! ");
+
     }
 }
