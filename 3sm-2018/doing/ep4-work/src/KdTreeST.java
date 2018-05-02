@@ -5,27 +5,27 @@
 
 import edu.princeton.cs.algs4.*;
 
-public class KdTreeST{
+public class KdTreeST<Value>{
 
     private Node root;
     private int n;
 
-    private static class Node {
+    private class Node {
 
         private Point2D p;
         private RectHV  rect;
-        private Value val;
+        private Value   val;
         private Node    lf;
         private Node    rt;
-        private int level;
+        private int     level;
 
-        public Node(Point2D p, Value val) {
+        public Node(Point2D p, Value v) {
             // RectHV r = rect;
             // if (r == null)
             //     r = new RectHV(0, 0, 1, 1);
             // this.rect   = r;
             this.p      = p;
-            this.val = val;
+            this.val = v;
             this.level = 0;
         }
 
@@ -72,11 +72,12 @@ public class KdTreeST{
 
     public void put(Point2D p, Value val) {
         if (p == null) throw new IllegalArgumentException("calls put() with a null key");
-        if (val == null) throw new IllegalArgumentException("calls put() with null value")
-        root = put(p, val, root);
+        if (val == null) throw new IllegalArgumentException("calls put() with null value");
+        root = put(p, val, root, 0);
     }
+
     private Node put(Point2D p, Value val, Node node, int level) {
-        if (node == null) return new Node(p, val, node.level);
+        if (node == null) return new Node(p, val);
         int comp = node.compare(p);
         if      (comp < 0) node.lf  = put(p, val, node.lf, node.level + 1);
         else if (comp > 0) node.rt  = put(p, val, node.rt, node.level + 1);
@@ -94,12 +95,19 @@ public class KdTreeST{
     }
 
     public Iterable<Point2D> points() {
-        return tree.keys();
+        if (isEmpty()) {
+            return new Queue<Point2D>();
+        }
+        return keys(min(), max());
     }
+    private Iterable<Point2D> keys()
     public Iterable<Point2D> range(RectHV rect){
-
+        return null;
     }
-    public Iterable<Point2D> nearest(Point2D p, int k){ }
+
+    public Iterable<Point2D> nearest(Point2D p, int k){ 
+        return null;
+    }
 
     // Private methods
     private boolean contains(Node node, Point2D p, boolean b) {
@@ -124,6 +132,34 @@ public class KdTreeST{
 
     // Unit testing
     public static void main(String[]args){
+        KdTreeST<String> points = new KdTreeST<String>();
+        int n = 10;
 
+        Point2D[] points_array = new Point2D[n];
+        String[] letter = {"a","b","c","d","e","f","g","h","i","j"};
+        for (int i = 0; i < n; i++) {
+            int x = StdRandom.uniform(100);
+            int y = StdRandom.uniform(100);
+            points_array[i] = new Point2D(x, y);
+        }
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.print(letter[i] + ", ");
+            System.out.print(points_array[i] + ", ");
+
+            System.out.println(" ------------- ");
+            System.out.println(" Putting in tree! ");
+
+            points.put(points_array[i],letter[i]);       
+        }
+        
+        System.out.println(" Finished putting! ");
+        System.out.println(" Getting from the tree ");
+
+        for (int i = 0; i < 10; i++) {
+            String letter_at = points.get(points_array[i]);
+            System.out.println("Point: " + points_array[i] + " got letter " + letter_at);   
+        }
+        System.out.println(" Finished getting! ");
     }
 }
