@@ -65,6 +65,36 @@ public class PointST<Value>{
 
     // Unit testing
     public static void main(String[]args){
+        PointST<String> points = new PointST<String>();
+        int n = 10;
+
+        Point2D[] points_array = new Point2D[n];
+        String[] letter = {"a","b","c","d","e","f","g","h","i","j"};
+        for (int i = 0; i < n; i++) {
+            int x = StdRandom.uniform(100);
+            int y = StdRandom.uniform(100);
+            points_array[i] = new Point2D(x, y);
+        }
+        
+        for (int i = 0; i < 10; i++) {
+            System.out.print(letter[i] + ", ");
+            System.out.print(points_array[i] + ", ");
+
+            System.out.println(" ------------- ");
+            System.out.println(" Putting in tree! ");
+
+            points.put(points_array[i],letter[i]);       
+        }
+        
+        System.out.println(" Finished putting! ");
+        System.out.println(" Getting from the tree ");
+
+        for (int i = 0; i < 10; i++) {
+            String letter_at = points.get(points_array[i]);
+            System.out.println("Point: " + points_array[i] + " got letter " + letter_at);   
+        }
+        System.out.println(" Finished getting! ");
+
 
     }
 }

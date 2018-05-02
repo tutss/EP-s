@@ -19,12 +19,13 @@ public class KdTreeST{
         private Node    rt;
         private int level;
 
-        public Node(Point2D p, RectHV rect) {
-            RectHV r = rect;
-            if (r == null)
-                r = new RectHV(0, 0, 1, 1);
-            this.rect   = r;
+        public Node(Point2D p, Value val) {
+            // RectHV r = rect;
+            // if (r == null)
+            //     r = new RectHV(0, 0, 1, 1);
+            // this.rect   = r;
             this.p      = p;
+            this.val = val;
             this.level = 0;
         }
 
@@ -65,14 +66,23 @@ public class KdTreeST{
         return get(p) != null;
     }
 
-    public void put(Point2D p, Value val) {
-        put(p, val, root);
-    }
-    private void put(Point2D p, Value val, Node node) {
-        if (node == null) ret
-    }
     public Value get(Point2D p) {
         return get(p, root, 0);
+    }
+
+    public void put(Point2D p, Value val) {
+        if (p == null) throw new IllegalArgumentException("calls put() with a null key");
+        if (val == null) throw new IllegalArgumentException("calls put() with null value")
+        root = put(p, val, root);
+    }
+    private Node put(Point2D p, Value val, Node node, int level) {
+        if (node == null) return new Node(p, val, node.level);
+        int comp = node.compare(p);
+        if      (comp < 0) node.lf  = put(p, val, node.lf, node.level + 1);
+        else if (comp > 0) node.rt  = put(p, val, node.rt, node.level + 1);
+        else               node.val = val;
+        return node;
+
     }
 
     private Value get(Point2D p, Node node, int height) {
@@ -82,6 +92,7 @@ public class KdTreeST{
         else if (comp > 0) return get(p, node.rt, node.level + 1);
         else return node.val;
     }
+
     public Iterable<Point2D> points() {
         return tree.keys();
     }
@@ -91,7 +102,6 @@ public class KdTreeST{
     public Iterable<Point2D> nearest(Point2D p, int k){ }
 
     // Private methods
-
     private boolean contains(Node node, Point2D p, boolean b) {
         if (node == null) return false;
         if (node.p.equals(p)) return true;
