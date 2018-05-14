@@ -297,6 +297,7 @@ public class MeuTST<Value extends Comparable<Value>> {
     }
 
     private Node<Value> delete(Node<Value> x, String key, int d) {
+        if (key.length() == 0) throw new IllegalArgumentException("key must have length >= 1");
         if (x == null) return null;
         if (d == key.length()) {
             if (x.val != null) n--;
@@ -307,13 +308,15 @@ public class MeuTST<Value extends Comparable<Value>> {
             if      (c < x.c)               delete(x.left,  key, d);
             else if (c > x.c)               delete(x.right, key, d);
             else if (d < key.length() - 1)  delete(x.mid,   key, d+1);
-        }
-
-        if (x.val != null) return x;
-        while (x.mid != null) {
-            return x;
+            else {
+                if (contains(key)) n--;
+                x.val = null;
+            }
         }
         return x;
+
+       // if (x.val != null) return x;
+        
     }
 
     
@@ -377,24 +380,24 @@ public class MeuTST<Value extends Comparable<Value>> {
         for (String key : st.keys())
             StdOut.println("  '" + key + "' : " + st.get(key));
 
-        // st.delete("sea");
-        // StdOut.println("\n" + st.size() + " itens depois de remover 'sea' novamente: ");
-        // for (String key : st.keys())
-        //     StdOut.println("   '" + key + "' : " + st.get(key));
+        st.delete("sea");
+        StdOut.println("\n" + st.size() + " itens depois de remover 'sea' novamente: ");
+        for (String key : st.keys())
+            StdOut.println("   '" + key + "' : " + st.get(key));
 
-        // st.delete("are");
-        // st.delete("the");
-        // st.delete("by");
-        // StdOut.println("\n" + st.size() + " itens depois de remover 'are', 'the', 'by': ");
-        // for (String key : st.keys()) {
-        //     StdOut.println("   '" + key + "' : " + st.get(key));
-        //     st.delete(key);
-        // }
+        st.delete("are");
+        st.delete("the");
+        st.delete("by");
+        StdOut.println("\n" + st.size() + " itens depois de remover 'are', 'the', 'by': ");
+        for (String key : st.keys()) {
+            StdOut.println("   '" + key + "' : " + st.get(key));
+            st.delete(key);
+        }
 
-        // StdOut.println("\n" + st.size() + " itens depois de remover... tudo: ");
-        // for (String key : st.keys()) {
-        //     StdOut.println("   '" + key + "' : " + st.get(key));
-        // }
+        StdOut.println("\n" + st.size() + " itens depois de remover... tudo: ");
+        for (String key : st.keys()) {
+            StdOut.println("   '" + key + "' : " + st.get(key));
+        }
 
         StdOut.println("fim dos testes.");
     }
