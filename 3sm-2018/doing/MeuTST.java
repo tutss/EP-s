@@ -15,6 +15,7 @@
 import edu.princeton.cs.algs4.StdIn;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.Queue;
+import edu.princeton.cs.algs4.Stack;
 import edu.princeton.cs.algs4.In;
 import java.util.Comparator;
 
@@ -218,7 +219,15 @@ public class MeuTST<Value extends Comparable<Value>> {
      */
     // all keys starting with given prefix
     public Iterable<String> keysWithPrefixByValue(String prefix) {
-        return keysWithPrefix(prefix);
+        if (prefix == null) {
+            throw new IllegalArgumentException("calls keysWithPrefix() with null argument");
+        }
+        Stack<String> stack = new Stack<String>();
+        Node<Value> x = get(root, prefix, 0);
+        if (x == null) return stack;
+        if (x.val != null) stack.push(prefix);
+        collect(x.mid, new StringBuilder(prefix), stack);
+        return stack;
     }
      
     
@@ -230,6 +239,15 @@ public class MeuTST<Value extends Comparable<Value>> {
         collect(x.mid,   prefix.append(x.c), queue);
         prefix.deleteCharAt(prefix.length() - 1);
         collect(x.right, prefix, queue);
+    }
+
+    private void collect(Node<Value> x, StringBuilder prefix, Stack<String> stack) {
+        if (x == null) return;
+        collect(x.left,  prefix, stack);
+        if (x.val != null) stack.push(prefix.toString() + x.c);
+        collect(x.mid,   prefix.append(x.c), stack);
+        prefix.deleteCharAt(prefix.length() - 1);
+        collect(x.right, prefix, stack);
     }
 
 
@@ -302,14 +320,16 @@ public class MeuTST<Value extends Comparable<Value>> {
         StdOut.print(">>> ");
         while (StdIn.hasNextLine()) {
             String prefix = StdIn.readLine();
-            Iterable<String> results = terms.keysWithPrefix(prefix);
-            StdOut.println("----------------------");
-            for (String key : results)
-                StdOut.println("   '" + key + "' : " + terms.get(key));
+            // Iterable<String> results = terms.keysWithPrefix(prefix);
+            // StdOut.println("----------------------");
+            // for (String key : results)
+            //     StdOut.println("   '" + key + "' : " + terms.get(key));
+            // StdOut.println("----------------------");
             StdOut.println("----------------------");
             Iterable<String> resultsValue = terms.keysWithPrefixByValue(prefix);
             for (String key : resultsValue)
                 StdOut.println("   '" + key + "' : " + terms.get(key));
+            StdOut.println("----------------------");
             StdOut.print(">>> ");
         }
 
@@ -328,32 +348,32 @@ public class MeuTST<Value extends Comparable<Value>> {
         st.put("the",8);
         
         StdOut.println(st.size() + " itens: ");
-        for (String key : st.keys())
-            StdOut.println("   '" + key + "' : " + st.get(key));
+        // for (String key : st.keys())
+        //     StdOut.println("   '" + key + "' : " + st.get(key));
         
-        st.delete("sea");
-        StdOut.println("\n"+ st.size() + " itens depois de remover 'sea': ");
-        for (String key : st.keys())
-            StdOut.println("  '" + key + "' : " + st.get(key));
+        // st.delete("sea");
+        // StdOut.println("\n"+ st.size() + " itens depois de remover 'sea': ");
+        // for (String key : st.keys())
+        //     StdOut.println("  '" + key + "' : " + st.get(key));
 
-        st.delete("sea");
-        StdOut.println("\n" + st.size() + " itens depois de remover 'sea' novamente: ");
-        for (String key : st.keys())
-            StdOut.println("   '" + key + "' : " + st.get(key));
+        // st.delete("sea");
+        // StdOut.println("\n" + st.size() + " itens depois de remover 'sea' novamente: ");
+        // for (String key : st.keys())
+        //     StdOut.println("   '" + key + "' : " + st.get(key));
 
-        st.delete("are");
-        st.delete("the");
-        st.delete("by");
-        StdOut.println("\n" + st.size() + " itens depois de remover 'are', 'the', 'by': ");
-        for (String key : st.keys()) {
-            StdOut.println("   '" + key + "' : " + st.get(key));
-            st.delete(key);
-        }
+        // st.delete("are");
+        // st.delete("the");
+        // st.delete("by");
+        // StdOut.println("\n" + st.size() + " itens depois de remover 'are', 'the', 'by': ");
+        // for (String key : st.keys()) {
+        //     StdOut.println("   '" + key + "' : " + st.get(key));
+        //     st.delete(key);
+        // }
 
-        StdOut.println("\n" + st.size() + " itens depois de remover... tudo: ");
-        for (String key : st.keys()) {
-            StdOut.println("   '" + key + "' : " + st.get(key));
-        }
+        // StdOut.println("\n" + st.size() + " itens depois de remover... tudo: ");
+        // for (String key : st.keys()) {
+        //     StdOut.println("   '" + key + "' : " + st.get(key));
+        // }
 
         StdOut.println("fim dos testes.");
     }

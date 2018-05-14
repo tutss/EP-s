@@ -1,5 +1,14 @@
 #!/bin/bash
 git status
+echo "Want to clear .class?"
+read ans
+if [ $ans = 'y' ]
+then 
+    echo "Give me the path"
+    read path
+    cd $path
+    rm *.class
+fi
 echo "Want to continue?"
 read answer
 if [ $answer = 'y' ]
