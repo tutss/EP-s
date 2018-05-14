@@ -292,7 +292,28 @@ public class MeuTST<Value extends Comparable<Value>> {
      * inspiração.
      */
     public void delete(String key) {
-        // TAREFA
+        if (key == null) throw new IllegalArgumentException();
+        root = delete(root, key, 0);
+    }
+
+    private Node<Value> delete(Node<Value> x, String key, int d) {
+        if (x == null) return null;
+        if (d == key.length()) {
+            if (x.val != null) n--;
+            x.val = null;
+        }
+        else {
+            char c = key.charAt(d);
+            if      (c < x.c)               delete(x.left,  key, d);
+            else if (c > x.c)               delete(x.right, key, d);
+            else if (d < key.length() - 1)  delete(x.mid,   key, d+1);
+        }
+
+        if (x.val != null) return x;
+        while (x.mid != null) {
+            return x;
+        }
+        return x;
     }
 
     
@@ -303,35 +324,35 @@ public class MeuTST<Value extends Comparable<Value>> {
      */
     public static void main(String[] args) {
         // read in the terms from a file
-        String filename = args[0];
-        In in = new In(filename);
-        int n = in.readInt();
-        MeuTST<Long> terms = new MeuTST<Long>();
-        for (int i = 0; i < n; i++) {
-            long weight = in.readLong();  // read the next weight
-            in.readChar();                // scan past the tab
-            String query = in.readLine(); // read the next query
-            terms.put(query, weight);     // construct the term
-        }
+        // String filename = args[0];
+        // In in = new In(filename);
+        // int n = in.readInt();
+        // MeuTST<Long> terms = new MeuTST<Long>();
+        // for (int i = 0; i < n; i++) {
+        //     long weight = in.readLong();  // read the next weight
+        //     in.readChar();                // scan past the tab
+        //     String query = in.readLine(); // read the next query
+        //     terms.put(query, weight);     // construct the term
+        // }
         
-        StdOut.println(terms.size() + " itens (= pares chave-valor) na TST");
-        StdOut.println("Teste interativo. Digite algo e tecle ENTER. Tecle crtl+d para encerrar,");
-        // read in queries from standard input and print out the matching terms
-        StdOut.print(">>> ");
-        while (StdIn.hasNextLine()) {
-            String prefix = StdIn.readLine();
-            // Iterable<String> results = terms.keysWithPrefix(prefix);
-            // StdOut.println("----------------------");
-            // for (String key : results)
-            //     StdOut.println("   '" + key + "' : " + terms.get(key));
-            // StdOut.println("----------------------");
-            StdOut.println("----------------------");
-            Iterable<String> resultsValue = terms.keysWithPrefixByValue(prefix);
-            for (String key : resultsValue)
-                StdOut.println("   '" + key + "' : " + terms.get(key));
-            StdOut.println("----------------------");
-            StdOut.print(">>> ");
-        }
+        // StdOut.println(terms.size() + " itens (= pares chave-valor) na TST");
+        // StdOut.println("Teste interativo. Digite algo e tecle ENTER. Tecle crtl+d para encerrar,");
+        // // read in queries from standard input and print out the matching terms
+        // StdOut.print(">>> ");
+        // while (StdIn.hasNextLine()) {
+        //     String prefix = StdIn.readLine();
+        //     Iterable<String> results = terms.keysWithPrefix(prefix);
+        //     StdOut.println("----------------------");
+        //     for (String key : results)
+        //         StdOut.println("   '" + key + "' : " + terms.get(key));
+        //     StdOut.println("----------------------");
+        //     StdOut.println("----------------------");
+        //     Iterable<String> resultsValue = terms.keysWithPrefixByValue(prefix);
+        //     for (String key : resultsValue)
+        //         StdOut.println("   '" + key + "' : " + terms.get(key));
+        //     StdOut.println("----------------------");
+        //     StdOut.print(">>> ");
+        // }
 
         // teste delete()
         StdOut.println("\niniciando teste de delete()...");
@@ -348,13 +369,13 @@ public class MeuTST<Value extends Comparable<Value>> {
         st.put("the",8);
         
         StdOut.println(st.size() + " itens: ");
-        // for (String key : st.keys())
-        //     StdOut.println("   '" + key + "' : " + st.get(key));
+        for (String key : st.keys())
+             StdOut.println("   '" + key + "' : " + st.get(key));
         
-        // st.delete("sea");
-        // StdOut.println("\n"+ st.size() + " itens depois de remover 'sea': ");
-        // for (String key : st.keys())
-        //     StdOut.println("  '" + key + "' : " + st.get(key));
+        st.delete("sea");
+        StdOut.println("\n"+ st.size() + " itens depois de remover 'sea': ");
+        for (String key : st.keys())
+            StdOut.println("  '" + key + "' : " + st.get(key));
 
         // st.delete("sea");
         // StdOut.println("\n" + st.size() + " itens depois de remover 'sea' novamente: ");
