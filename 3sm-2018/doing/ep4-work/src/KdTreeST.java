@@ -172,7 +172,19 @@ public class KdTreeST<Value>{
     }
 
     public Iterable<Point2D> nearest(Point2D p, int k){ 
-        return null;
+        if (p == null) throw new IllegalArgumentException();
+        Point2D nearest = null;
+        Stack<Point2D> s = new Stack<Point2D>();
+        for (Point2D point : points()) {
+            if (nearest == null || point.distanceTo(p) < nearest.distanceTo(p))
+                nearest = point;
+                s.push(nearest);
+        }
+        Stack<Point2D> ret = new Stack<Point2D>();
+        for (int i = 0; i < k; i++) {
+            ret.push(s.pop());
+        }
+        return ret;
     }
 
     // Private methods

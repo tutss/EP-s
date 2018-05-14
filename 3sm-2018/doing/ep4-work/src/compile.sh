@@ -1,7 +1,7 @@
-echo 'Name of the file: '
-read answer
+# echo 'Name of the file: '
+# read answer
 
-javac-algs4 $answer.java
+javac-algs4 KdTreeST.java
 echo 'File compiled!'
 echo 'Want to clean?'
 read ans
@@ -10,4 +10,5 @@ then
     rm *.class
 fi
 
+java-algs4 KdTreeST
 
