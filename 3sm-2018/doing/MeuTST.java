@@ -229,6 +229,10 @@ public class MeuTST<Value extends Comparable<Value>> {
         collect(x.mid, new StringBuilder(prefix), stack);
         return stack;
     }
+
+    private Iterable<String> prefixMatchByValue(String prefix) {
+        return keysWithPrefixByValue(prefix);
+    }
      
     
     // all keys in subtrie rooted at x with given prefix
@@ -297,6 +301,8 @@ public class MeuTST<Value extends Comparable<Value>> {
     }
 
     private Node<Value> delete(Node<Value> x, String key, int d) {
+        if (d < 0) throw new IllegalArgumentException();
+        if (key == null) throw new NullPointerException();
         if (key.length() == 0) throw new IllegalArgumentException("key must have length >= 1");
         if (x == null) return null;
         if (d == key.length()) {
