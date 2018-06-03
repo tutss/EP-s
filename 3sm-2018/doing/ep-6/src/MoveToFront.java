@@ -5,69 +5,64 @@
 
 import edu.princeton.cs.algs4.BinaryStdIn;
 import edu.princeton.cs.algs4.BinaryStdOut;
-import edu.princeton.cs.algs4.Alphabet;
-import edu.princeton.cs.algs4.RedBlackBST;
-
-import java.util.ArrayList;
 
 public class MoveToFront {
-
-    private static class Duo {
-        int index;
-        int new_index;
-
-        public Duo() {
-            this.index = 0;
-            this.new_index = 0;
-        }
-
-        public int new_local(int old_index) {
-            return new_index;
-        }
-
-        public int old_local(int new_place){
-            return index;
-        }
-    }
+    private static final int R = 256;
 
     // Public methods
     public static void encode() {
         // Cria o alfabeto e lê entrada
         String s = BinaryStdIn.readString();
         char[] c = s.toCharArray();
-        Alphabet alphabet = Alphabet.EXTENDED_ASCII;
-
-
-        ArrayList<Integer> list = new ArrayList<>();
-        RedBlackBST<Integer, Integer> rbt = new RedBlackBST<>();
+        char[] alphabet = alphabet();
 
         // Colocando ou não na lista
+        // Um loop para a entrada, o outro para o alfabeto e suas mudanças
         for (int i = 0; i < c.length; i++) {
-            int alpha_index = alphabet.toIndex(c[i]);
-            if (!list.contains(alpha_index)) {
-                // Colocando com valores da inserção
-                int real_local = list.size();
-                list.add(alpha_index);
-                rbt.put(alpha_index, real_local);
+            char n;
+            char initial = c[i];
+            char tmp_to_keep, tmp_to_change;
+            /*
+            Percorre no alfabeto, verificando se encontrou o char, que também "funciona"
+            como um inteiro. Quando acha, troca as posições no alfabeto, fazendo isso para
+            todas as letras da entrada.
+            */
+            for (tmp_to_keep = alphabet[0], n = 0; initial != alphabet[n]; n++) {
+                tmp_to_change = alphabet[n];
+                alphabet[n] = tmp_to_keep;
+                tmp_to_keep = tmp_to_change;
             }
-            else {
-                // Colocando quando o valor já era existente
-                int size = list.size() - 1;
-                int new_alpha_index = rbt.get(alpha_index) + size;
-                int real_local = size + 1;
-                list.add(new_alpha_index);
-                rbt.put(alpha_index, real_local);
-            }
+            BinaryStdOut.write(n);
+            alphabet[n] = tmp_to_keep;
+            alphabet[0] = initial;
         }
 
+        BinaryStdOut.close();
     }
 
     public static void decode() {
+        String s = BinaryStdIn.readString();
+        char[] c = s.toCharArray();
+        char[] alphabet = alphabet();
 
+        for (int i = 0; i < c.length; i++) {
+            char place = alphabet[c[i]];
+            BinaryStdOut.write(place, 8);
+            while (c[i] > 0)
+                alphabet[c[i]] = alphabet[--c[i]];
+            alphabet[0] = place;
+        }
+        BinaryStdOut.close();
     }
 
     // Private methods
-    private void insert()
+    private static char[] alphabet() {
+        char[] alphabet = new char[R];
+        for (char i = 0; i < alphabet.length; i++) {
+            alphabet[i] = i;
+        }
+        return alphabet;
+    }
 
     // Unit testing
     public static void main(String[] args) {
