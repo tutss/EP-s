@@ -4,8 +4,16 @@
  */
 
 public class CircularSuffixArray {
+    private static String in;
+    private static int[] index;
     // Public methods
     public CircularSuffixArray(String s) {
+        if (s == null) throw new IllegalArgumentException();
+        in = s;
+        for (int i = 0; i < in.length(); i++) {
+            index[i] = i;
+        }
+        sort(in);
     }
     public int length(){
         return 0;
@@ -15,7 +23,9 @@ public class CircularSuffixArray {
     }
 
     // Private methods
-
+    private static void sort(String s) {
+        int n = s.length();
+    }
 
     // Unit testing
     public static void main(String[] args) {

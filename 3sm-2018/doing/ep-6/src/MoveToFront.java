@@ -21,7 +21,8 @@ public class MoveToFront {
         for (int i = 0; i < c.length; i++) {
             char n;
             char initial = c[i];
-            char tmp_to_keep, tmp_to_change;
+            char tmp_to_keep; 
+            char tmp_to_change;
             /*
             Percorre no alfabeto, verificando se encontrou o char, que também "funciona"
             como um inteiro. Quando acha, troca as posições no alfabeto, fazendo isso para
@@ -40,6 +41,9 @@ public class MoveToFront {
         BinaryStdOut.close();
     }
 
+    /*
+    Decode method
+    */
     public static void decode() {
         String s = BinaryStdIn.readString();
         char[] c = s.toCharArray();
