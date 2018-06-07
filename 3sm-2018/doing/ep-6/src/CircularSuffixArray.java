@@ -24,7 +24,25 @@ public class CircularSuffixArray {
 
     // Private methods
     private static void sort(String s) {
-        int n = s.length();
+        sort(0, s.length() -1, s);
+    }
+
+    private static void sort(int lo, int hi, String s) {
+
+    }
+
+    // exchange positions between i and j
+    private void exch(int i, int j) {
+        int temp = index[i];
+        index[i] = index[j];
+        index[j] = temp;
+    }
+
+    // return the dth character of s, -1 if d = length of s
+    private static int charAt(String s, int d) {
+        assert d >= 0 && d <= s.length();
+        if (d == s.length()) return -1;
+        return s.charAt(d);
     }
 
     // Unit testing
