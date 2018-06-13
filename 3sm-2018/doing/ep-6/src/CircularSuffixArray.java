@@ -67,7 +67,7 @@ public class CircularSuffixArray {
             else              i++;
         }
 
-        // a[lo..lt-1] < v = a[lt..gt] < a[gt+1..hi].
+        // a[lo..lt-1] < v =    a[lt..gt] < a[gt+1..hi].
         sort(lo, lt-1, s, d);
         if (v >= 0) sort(lt, gt, s, d+1);
         sort(gt+1, hi, s, d);
@@ -89,10 +89,10 @@ public class CircularSuffixArray {
         while (d < size) {
             int cmp_1 = charAt(a, c_1, d);
             int cmp_2 = charAt(a, c_2, d);
-            if (cmp_1 > cmp_2) {
+            if (cmp_1 < cmp_2) {
                 return true;
             }
-            else if (cmp_1 < cmp_2) {
+            else if (cmp_1 > cmp_2) {
                 return false;
             }
             d++;
@@ -108,6 +108,9 @@ public class CircularSuffixArray {
     }
 
     // return the dth character of s, -1 if d = length of s
+    /*
+    * This implementation uses modulus to loop the string
+    * */
     private static int charAt(String s, int k, int d) {
         assert d >= 0 && d <= s.length();
         if (d == s.length()) return -1;
@@ -117,12 +120,13 @@ public class CircularSuffixArray {
 
     // Unit testing
     public static void main(String[] args) {
-        CircularSuffixArray c = new CircularSuffixArray("banana");
+        CircularSuffixArray c = new CircularSuffixArray("ABRACADABRA!");
+        String s = "ABRACADABRA!";
         for (int i = 0; i < c.length(); i++) {
-            int k = c.index(i);
-            System.out.print(k + " - - - ");
-            System.out.print("banana".charAt(k));
-            System.out.println();
+            int k = index[i];
+            int j = 0;
+            while (j != k)
+            System.out.println(k);
         }
     }
 }

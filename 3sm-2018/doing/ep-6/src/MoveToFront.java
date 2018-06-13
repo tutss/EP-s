@@ -8,38 +8,34 @@ import edu.princeton.cs.algs4.BinaryStdOut;
 
 public class MoveToFront {
     private static final int R = 256;
+    private static char[] alpha;
 
     // Public methods
     public static void encode() {
         // Cria o alfabeto e lê entrada
         String s = BinaryStdIn.readString();
         char[] c = s.toCharArray();
-        char[] alphabet = alphabet();
+        alpha = alphabet();
 
         // Colocando ou não na lista
         // Um loop para a entrada, o outro para o alfabeto e suas mudanças
         for (int i = 0; i < c.length; i++) {
-            char n;
             char initial = c[i];
-            char tmp_to_keep; 
-            char tmp_to_change;
             /*
             Percorre no alfabeto, verificando se encontrou o char, que também "funciona"
             como um inteiro. Quando acha, troca as posições no alfabeto, fazendo isso para
             todas as letras da entrada.
             */
-            for (tmp_to_keep = alphabet[0], n = 0; initial != alphabet[n]; n++) {
-                tmp_to_change = alphabet[n];
-                alphabet[n] = tmp_to_keep;
-                tmp_to_keep = tmp_to_change;
-            }
-            BinaryStdOut.write(n);
-            alphabet[n] = tmp_to_keep;
-            alphabet[0] = initial;
+            char[] in = exch(initial);
+
+            BinaryStdOut.write(in[2]);
+            alpha[in[2]] = in[0];
+            alpha[0] = in[1];
         }
 
         BinaryStdOut.close();
     }
+
 
     /*
     Decode method
@@ -66,6 +62,21 @@ public class MoveToFront {
             alphabet[i] = i;
         }
         return alphabet;
+    }
+
+
+    private static char[] exch(char init) {
+        char a;
+        char b;
+        char n;
+        for (a = alpha[0], n = 0; init != alpha[n]; n++) {
+            b = alpha[n];
+            alpha[n] = a;
+            a = b;
+        }
+        char[] ret = new char[3];
+        ret[0] = a; ret[1] = init; ret[2] = n;
+        return ret;
     }
 
     // Unit testing
