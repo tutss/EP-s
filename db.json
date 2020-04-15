@@ -1,0 +1,139 @@
+[{ 
+    "id": 1,
+    "ano": 1990,
+    "titulo": "Bela e a Fera",
+    "duração": 100,
+    "classificacao_etaria": "+12",
+    "pais": "Brasil",
+    "nota_media": 5.5,
+    "categoria": "filme",
+    "tipo": "desenho",
+    "n_sequencia": 1,
+    "direcao": {
+        "id_artista": 4,
+        "nome": "Han Solo",
+        "data_nasc": "10/6/1520",
+        "local_nasc": "Corellia",
+        "biografia": "Amigo da Leia",
+        "nota": 10
+    },
+    "artistas": [
+        {
+            "id_artista": 4,
+            "nome": "Chewie",
+            "data_nasc": "7/4/1820",
+            "local_nasc": "Kashyyyk",
+            "biografia": "Amigo do Han",
+            "nome_personagem": "Fera",
+            "nota": 10
+        },
+        {
+            "id_artista": 5,
+            "nome": "Leia",
+            "data_nasc": "7/4/1974",
+            "local_nasc": "Alderaan",
+            "biografia": "General da Aliança Rebelde",
+            "nome_personagem": "Bela",
+            "nota": 10
+        }
+    ],
+    "caracteristicas": [
+        {"bilheteria": 1000},
+        {"faturamento": 100}
+    ],
+    "reviews": [
+        {"usuario1": "Muito legal!"},
+        {"usuario2": "belo filme"}
+    ],
+    "empresa_produtora": "Fox",
+    "cnpj_produtora": "011.110.101-1"
+},
+{ 
+    "id": 2,
+    "ano": 2003,
+    "titulo": "The Office",
+    "duração": 20,
+    "classificacao_etaria": "+12",
+    "pais": "EUA",
+    "nota_media": 8.5,
+    "categoria": "serie",
+    "tipo": "comédia",
+    "direcao": {
+        "id_artista": 15,
+        "nome": "B J Novak",
+        "data_nasc": "31/7/1979",
+        "local_nasc": "EUA",
+        "biografia": "temp",
+        "nota": 10
+    },
+    "artistas": [
+        {
+            "id_artista": 1,
+            "nome": "Stevie Carell",
+            "data_nasc": "7/4/1963",
+            "local_nasc": "EUA",
+            "biografia": "mr funny guy",
+            "nome_personagem": "Michael Scott",
+            "nota": 10
+        },
+        {
+            "id_artista": 8,
+            "nome": "John Krasinski",
+            "data_nasc": "7/4/1979",
+            "local_nasc": "EUA",
+            "biografia": "mr stanford",
+            "nome_personagem": "Jim",
+            "nota": 10
+        }
+    ],
+    "caracteristicas": [
+        {
+            "episodios": [
+                {"nome": "begin", "numero_episodio": 1, "numero_temporada": 1},
+                {"nome": "end", "numero_episodio": 2, "numero_temporada": 2}
+            ]
+        }
+    ],
+    "reviews": [
+        {"usuario1": "Muito legal!"},
+        {"usuario2": "belo filme"}
+    ],
+    "empresa_produtora": "Fox",
+    "cnpj_produtora": "011.110.101-1"
+},
+{ 
+    "id": 3,
+    "ano": 2003,
+    "titulo": "In da Club",
+    "duração": 3,
+    "classificacao_etaria": "+18",
+    "pais": "EUA",
+    "nota_media": 9.7,
+    "categoria": "videoclipe",
+    "musico": [
+        {
+            "id_artista": 10,
+            "nome": "Curtis Jackson",
+            "data_nasc": "7/4/1983",
+            "local_nasc": "EUA",
+            "biografia": "mr tough guy",
+            "nome_personagem": "50 cent",
+            "grupo": {
+                "nome": "GUnit",
+                "genero": "Rap"
+            }
+        }
+    ],
+    "caracteristicas": [
+        {
+            "musica": "In da Club",
+            "genero": "Rap"
+        }
+    ],
+    "reviews": [
+        {"usuario1": "Muito legal!"},
+        {"usuario2": "belo filme"}
+    ],
+    "empresa_produtora": "Fox",
+    "cnpj_produtora": "011.110.101-1"
+}]

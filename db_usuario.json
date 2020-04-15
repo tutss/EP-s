@@ -1,0 +1,22 @@
+{
+    "usuarios": [
+        {
+            "nome": "Joao",
+            "senha": "senhaboa",
+            "email": "johnynaodepp@gmail.com",
+            "avaliaçoes": [
+                {
+                    "nota": 5, 
+                    "comentario": "massa!",
+                    "data_hora": 640,
+                    "id_avaliavel": 5
+                }, {
+                    "nota": 4, 
+                    "comentario": "legal, mas poderia ter sido melhor1",
+                    "data_hora": 720,
+                    "id_avaliavel": 6
+                }
+            ]
+        }
+    ]
+}
