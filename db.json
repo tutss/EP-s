@@ -42,8 +42,8 @@
         {"faturamento": 100}
     ],
     "reviews": [
-        {"usuario1": "Muito legal!"},
-        {"usuario2": "belo filme"}
+        {"usuario1": "Muito legal!", "nota": 5, "data_hora": 10, "id": 14},
+        {"usuario2": "belo filme", "nota": 5, "data_hora": 10, "id": 18}
     ],
     "empresa_produtora": "Fox",
     "cnpj_produtora": "011.110.101-1"
@@ -64,7 +64,7 @@
         "data_nasc": "31/7/1979",
         "local_nasc": "EUA",
         "biografia": "temp",
-        "nota": 10
+        "nota": 1
     },
     "artistas": [
         {
@@ -95,8 +95,8 @@
         }
     ],
     "reviews": [
-        {"usuario1": "Muito legal!"},
-        {"usuario2": "belo filme"}
+        {"usuario1": "Muito legal!", "nota": 5, "data_hora": 10, "id": 14},
+        {"usuario2": "belo filme", "nota": 5, "data_hora": 10, "id": 100}
     ],
     "empresa_produtora": "Fox",
     "cnpj_produtora": "011.110.101-1"
@@ -131,8 +131,8 @@
         }
     ],
     "reviews": [
-        {"usuario1": "Muito legal!"},
-        {"usuario2": "belo filme"}
+        {"usuario1": "Muito legal!", "nota": 5, "data_hora": 10, "id": 14},
+        {"usuario2": "belo filme", "nota": 5, "data_hora": 10, "id": 14}
     ],
     "empresa_produtora": "Fox",
     "cnpj_produtora": "011.110.101-1"
